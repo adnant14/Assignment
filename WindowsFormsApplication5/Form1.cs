@@ -16,5 +16,27 @@ namespace WindowsFormsApplication5
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text))
+                label1.Text = "Enter Numbers";
+            double count = 0, sum = 0, num;
+            foreach (var s in textBox1.Text.Split(','))
+            {
+                if (double.TryParse(s, out num))
+                {
+                    count++;
+                    sum += num;
+
+                }
+            }
+            label1.Text = "" + sum / count;
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
